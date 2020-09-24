@@ -34,7 +34,7 @@ import {recipeEffects} from "./recipe/store/recipe.effects";
     LoadingSpinerComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
