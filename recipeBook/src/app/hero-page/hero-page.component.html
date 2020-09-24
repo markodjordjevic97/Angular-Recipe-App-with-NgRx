@@ -1,0 +1,9 @@
+
+<main class="main">
+    <!--********* Gallery*********** -->
+    <section class="gallery">
+        <figure *ngFor="let picture of gallery.gallery; let i = index" class="gallery__item gallery__item--{{i+1}}">
+            <img [src]="picture.imagePath" alt="picture" class="gallery__img">
+        </figure>
+    </section>
+</main>

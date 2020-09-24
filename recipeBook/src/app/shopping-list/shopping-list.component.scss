@@ -1,0 +1,52 @@
+$color-btn: #388e3c;
+.hero {
+    box-shadow: 0 1rem 4rem rgba(0,0,0,.8);
+}
+h1, .secondH1 {text-align: center; margin-bottom: 5rem; color: #8E0E00;}
+@media only screen and (max-width: 31.25em){
+  h1{margin-bottom: 7rem; margin: 4rem}
+}
+.secondH1 {
+  color: $color-btn;
+  @media only screen and (max-width: 31.25em) {
+      margin-bottom: 7rem;
+      margin-top: -8rem
+    }
+
+}
+.main {
+    width:  100%;
+    min-height: 85vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(50rem,1fr));
+    gap: 1rem;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    font-size: 1.8rem;
+
+    &__right{
+        align-self: center;
+        margin-top: -7rem;
+        width: 80%;
+      position: relative;
+        @media only screen and (max-width: 31.25em){
+            margin: 15rem 0;
+        }
+        &-card {
+            margin-top: .8rem;
+        }
+    }
+}
+.mat-green {
+  background-color: $color-btn;
+  color: #ffffff;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin-top: 18rem;
+  @media only screen and (max-width: 31.25em){
+    margin: 20rem 0;
+  }
+}

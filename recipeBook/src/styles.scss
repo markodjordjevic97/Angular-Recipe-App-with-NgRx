@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+:root{
+    --color-primary: #1f1c18;
+    --color-primary-light: #8e0e00;
+    --color-primary-form: #ffffff98;
+    --color-text: #eee;
+}
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lato:ital,wght@0,400;0,700;1,300;1,400&display=swap');
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    @media only screen and (max-width: 75em){
+        font-size: 56.25%;
+    }
+    @media only screen and (max-width: 64em){
+        font-size: 50%;
+    }
+    @media only screen and (max-width: 48em){
+        font-size: 42%;
+    }
+    @media only screen and (max-width: 23.4375em){
+        font-size: 38%;
+    }
+
+}
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    letter-spacing: .2rem;
+    line-height: 1.1;
+    margin: 3rem;
+    min-height: 100vh;
+    background-color: #eee;
+    box-shadow: 0 1rem 4rem rgba(0,0,0,.8);
+
+    @media only screen and (max-width: 48em){
+        margin: 0;
+    }
+}

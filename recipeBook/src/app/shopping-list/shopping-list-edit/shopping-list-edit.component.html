@@ -1,0 +1,22 @@
+<form class="form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <mat-form-field class="form__full-width">
+      <mat-label>Favorite ingredient</mat-label>
+      <input matInput placeholder="Ex. Apple"
+      name="name"
+      ngModel
+      required>
+    </mat-form-field>
+    <mat-form-field class="form__full-width">
+      <mat-label>Amount ingredient</mat-label>
+      <input matInput placeholder="Ex. 5"
+      name="amount"
+      ngModel
+      required
+      pattern="^[1-9]+[0-9]*$">
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!f.valid">{{editMode ? 'Update' : 'Add item'}}</button>
+    <button mat-raised-button color="red" type="button" (click)="onDelete()" *ngIf="editMode">Delete item</button>
+    <button mat-raised-button color="link" type="button" (click)="onClear()">Clear item</button>
+  </form>
+
+

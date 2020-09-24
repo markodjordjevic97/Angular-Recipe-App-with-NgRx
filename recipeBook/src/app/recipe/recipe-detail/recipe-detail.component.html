@@ -1,0 +1,23 @@
+<mat-card class="example-card" *ngIf="recipe">
+    <mat-card-header>
+      <img mat-card-avatar [src]="recipe.imagePath" alt="{{ recipe.name }}">
+      <mat-card-title>{{recipe.name}}</mat-card-title>
+      <mat-card-subtitle>{{recipe.description}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="recipe.imagePath" alt="Photo" class="mat-card-img">
+    <mat-card-content class="cont">
+      <mat-card-title>Recipe description</mat-card-title>
+      <p>{{recipe.description}}</p>
+    </mat-card-content>
+    <mat-card-content class="cont">
+      <mat-card-title>Ingredients:</mat-card-title>
+      <li class="ingredient" *ngFor="let ing of recipe.ingredients">&#8600;  {{ing.name}} - {{ing.amount}}</li>
+    </mat-card-content>
+    <mat-card-actions class="actions">
+      <button style="margin-right: auto;" mat-raised-button color="red" class="matIcon" ><mat-icon>thumb_up</mat-icon> Like</button>
+      <button class="actions__edit" mat-raised-button color="primary" (click)="onEditRecipe()" >Edit recipe</button>
+      <button class="actions__delete" mat-raised-button color="red2" (click)="onDeleteRecipe()" >Delete recipe</button>
+    </mat-card-actions>
+  </mat-card>
+
+

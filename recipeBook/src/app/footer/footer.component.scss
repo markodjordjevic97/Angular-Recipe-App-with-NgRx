@@ -1,0 +1,18 @@
+
+.footer {
+    width: 100%;
+    display: flex;
+    bottom: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: .5rem 2rem;
+    background-image: linear-gradient(to right bottom,var(--color-primary-light), var(--color-primary));
+    color: var(--color-text);
+    border-radius: .2rem;
+   
+    &__img {
+       width: 15rem;
+       height: 15rem;
+    }
+    
+}

@@ -1,0 +1,25 @@
+<div class="auth">
+  <div class="error" *ngIf="error">
+    <p class="error__paragraf">{{error}}. Please back to main page.</p>
+    <button class="error__btn" [routerLink]="['/']">&#8592; main page</button>
+  </div>
+  <div *ngIf="isLoading">
+    <app-loading-spiner></app-loading-spiner>
+  </div>
+  <form class="form" [formGroup]="authentification" (ngSubmit)="onSubmit()" *ngIf="!isLoading">
+    <a [routerLink]="['/']" class="form__close"><span >&#10008;</span></a>
+    <h2 class="form__header">{{isLoginMode ? 'LogIn' : 'SignUp'}} to Recipe Book</h2>
+    <mat-form-field appearance="outline" class="form__email">
+      <mat-label>Email*</mat-label>
+      <input  type="email" matInput placeholder="Email*" class="email" formControlName="email">
+      <mat-icon matSuffix>{{isLoginMode ? '' : ''}}</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="form__password">
+      <mat-label>Password*</mat-label>
+      <input [type]="isPassword ? 'password' : 'text'"  matInput placeholder="Password*" formControlName="password">
+      <mat-icon matSuffix (click)="isPassword = !isPassword" style="cursor: pointer">{{isPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+    <button class="form__btn" mat-raised-button color="red" type="submit" [disabled]="!authentification.valid">{{isLoginMode ? 'Login' : 'Create Account'}}</button>
+    <button mat-raised-button class="switchbtn"  color="basic" type="button" (click)="onSwitchMode()">{{isLoginMode ? 'Switch to Create Account!' : 'Switch to LogIn'}}</button>
+  </form>
+</div>

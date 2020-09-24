@@ -1,0 +1,60 @@
+<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" class="form">
+  <div class="form__buttons">
+    <button mat-raised-button color="primary" type="submit" [disabled]="!recipeForm.valid">Save</button>
+    <button mat-raised-button color="warn" type="button" (click)="onCancel()">Cancel</button>
+  </div>
+  <div class="newMode" *ngIf="!editMode">
+    <h1>Please enter recipe information</h1>
+  </div>
+  <div class="form__input">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName='name'>
+      <mat-icon matSuffix>{{!editMode ? 'sentiment_very_satisfied' : 'check'}}</mat-icon>
+
+    </mat-form-field>
+  </div>
+  <div class="form__input">
+    <mat-form-field appearance="fill">
+      <mat-label>ImagePath</mat-label>
+      <input matInput type="text" formControlName='imagePath' #img>
+      <mat-icon matSuffix>{{!editMode ? 'sentiment_very_satisfied' : 'check'}}</mat-icon>
+    </mat-form-field>
+  </div>
+  <div class="form__img">
+    <img [src]="img.value" alt="">
+  </div>
+  <div class="form__textarea" style="margin-top: 1rem;">
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName='description'></textarea>
+      <mat-icon matSuffix>{{!editMode ? 'sentiment_very_satisfied' : 'check'}}</mat-icon>
+    </mat-form-field>
+  </div>
+  <h2>Ingredients:</h2>
+  <div class="form__array" formArrayName="ingredients">
+    <div class="form__baskuz" *ngFor="let ingredient of recipeForm.get('ingredients')['controls']; let i = index"
+      [formGroupName]="i">
+      <div class="form__baskuz-name">
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" formControlName="name">
+          <mat-icon matSuffix>{{!editMode ? 'sentiment_very_satisfied' : 'check'}}</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="form__baskuz-amount">
+        <mat-form-field appearance="fill">
+          <mat-label>Amount</mat-label>
+          <input matInput type="number" formControlName="amount">
+          <mat-icon matSuffix>{{!editMode ? 'sentiment_very_satisfied' : 'check'}}</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="form__baskuz-button">
+        <button mat-raised-button color="warn" type="button" (click)="onDeleteIngredient(i)">X</button>
+      </div>
+    </div>
+    <div class="form__baskuz-buttonAdd" style="margin: 2rem 0;">
+      <button  mat-raised-button color="primary" type="button" (click)="onAddIngredient()">Add Ingredient</button>
+    </div>
+  </div>
+</form>

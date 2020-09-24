@@ -1,0 +1,10 @@
+<button mat-button
+[routerLink]="[id]">
+<mat-card class="content">
+    <div class="content__left">
+    <mat-card-title class="title">{{recipe.name}}</mat-card-title>
+    <mat-card-subtitle style="color: var(--color-primary)">{{recipe.description}}</mat-card-subtitle>
+    </div>
+    <img mat-card-avatar [src]="recipe.imagePath">
+</mat-card>
+</button>

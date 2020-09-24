@@ -1,0 +1,47 @@
+<mat-toolbar class="header">
+  <button mat-icon-button [matMenuTriggerFor]="menu" color="myColor" [ngClass]="buttonClass">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu"  class="customize">
+    <button mat-menu-item  class="header__icon header__icon--m header__icon--v"
+            [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions] = "{exact: true}">
+      <span>Home</span>
+    </button>
+    <button mat-menu-item  class="header__icon header__icon--m header__icon--v"
+            [routerLink]="['/recipes']" routerLinkActive="active">
+      <span>Recipe</span>
+    </button>
+    <button mat-menu-item  class="header__icon header__icon--m header__icon--v"
+            [routerLink]="['/shopping-list']" routerLinkActive="active">
+      <span>Shopping List</span>
+    </button>
+  </mat-menu>
+  <div class="header__left">
+    <button mat-icon-button class="header__icon header__icon--m" aria-label="Example icon-button with menu icon"
+    [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions] = "{exact: true}">
+        <span>Home</span>
+    </button>
+    <button mat-icon-button class="header__icon header__icon--m" aria-label="Example icon-button with menu icon"
+    [routerLink]="['/recipes']" routerLinkActive="active"  *ngIf="isAuth">
+        <span>Recipe</span>
+    </button>
+    <button mat-icon-button class="header__icon header__icon--m" aria-label="Example icon-button with menu icon"
+    [routerLink]="['/shopping-list']" routerLinkActive="active" *ngIf="isAuth">
+        <span>Shopping List</span>
+    </button>
+  </div>
+    <div class="header__right">
+    <button mat-icon-button class="header__icon favorite-icon" aria-label="Example icon-button with heart icon"
+            (click)="pageLikes()" [disabled]="clicked" *ngIf="isAuth">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <span class="header__icon-likes" *ngIf="counter > 0">{{counter}}  {{isAuth ? null : 'people like this...'}}</span>
+
+    <button mat-icon-button class="header__icon loginAuthentification" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  <button mat-icon-button class="header__icon" aria-label="Example icon-button with share icon">
+    <span (click)="SignInOut()" >{{isAuth ? 'LogOut' : 'SignUp'}}</span>
+  </button>
+    </div>
+  </mat-toolbar>

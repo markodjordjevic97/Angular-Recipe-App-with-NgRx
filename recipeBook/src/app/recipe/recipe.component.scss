@@ -1,0 +1,22 @@
+.hero {
+    box-shadow: 0 1rem 4rem rgba(0,0,0,.8);
+}
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
+.main {
+    display: grid;
+    width:  100%;
+    min-height: 85vh;
+    grid-template-columns: repeat(auto-fit,minmax(50rem,1fr));
+    gap: 1rem;
+    padding: 1rem;
+    &__right {
+        position: relative;
+    }
+}

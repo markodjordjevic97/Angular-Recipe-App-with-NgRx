@@ -1,0 +1,48 @@
+// Variables
+$color-btn: #388e3c;
+.hack {
+button:not(:last-child) {
+  margin-right: 1rem;
+}
+.mat-red {
+  background-color: #8E0E00;
+  color: #eee;
+}
+}
+.mat-green {
+    background-color: $color-btn;
+    color: #ffffff;
+    margin-right: auto;
+    align-self: initial;
+}
+.search{
+    position: relative;
+    width: max-content;
+    &__input {
+    padding: 1rem 1.5rem;
+    border: none;
+    outline: none;
+    border-radius: .2rem;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-primary-light);
+    transition: all .3s;
+    &:focus{
+        box-shadow: 0 .5rem 1rem rgba(#8E0E00,.3);
+        width: 30rem;
+    }
+    &::placeholder{
+        color: var(--color-primary-light);
+    }
+    }
+    &__icon {
+        position: absolute;
+        top: 28%;
+        right: 0;
+        z-index: 999;
+        width: 1.7rem;
+        height: 1.7rem;
+    }
+}

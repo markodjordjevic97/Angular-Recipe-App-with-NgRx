@@ -1,0 +1,12 @@
+<div class="hack">
+  <button mat-raised-button color="green"  class="hack__btn-1" (click)="onNewRecipe()">New recipe</button>
+  <button mat-raised-button color="red"  (click)="onSave()">Save recipes</button>
+</div>
+
+<hr style="margin: 1rem 0;">
+<app-recipe-item
+*ngFor="let recipe of recipes; let i = index"
+[recipe]="recipe"
+[index]="i">
+</app-recipe-item>
+
