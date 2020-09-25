@@ -31,9 +31,7 @@ export class RecipeListComponent implements OnInit, OnDestroy {
         map(recipeState => {
           return recipeState.recipes;
         })
-
-      )
-      .subscribe(
+      ).subscribe(
         (recipes: Recipe[]) => {
           this.recipes = recipes;
         }

@@ -24,6 +24,7 @@ import {AuthEffects} from "./auth/store/auth.effects";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {environment} from "../environments/environment";
 import {recipeEffects} from "./recipe/store/recipe.effects";
+import {ShoppingListEffects} from "./shopping-list/store/shopping-list.effects";
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,7 @@ import {recipeEffects} from "./recipe/store/recipe.effects";
     StoreDevtoolsModule.instrument({
       logOnly: environment.production
     }),
-    EffectsModule.forRoot([AuthEffects, recipeEffects])
+    EffectsModule.forRoot([AuthEffects, recipeEffects, ShoppingListEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

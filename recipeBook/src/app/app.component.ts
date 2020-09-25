@@ -10,7 +10,8 @@ import {isPlatformBrowser} from '@angular/common';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
+
 })
 export class AppComponent implements OnInit, OnDestroy{
 
@@ -42,6 +43,7 @@ export class AppComponent implements OnInit, OnDestroy{
         }
     });
   }
+
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();

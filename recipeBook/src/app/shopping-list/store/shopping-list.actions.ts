@@ -9,6 +9,11 @@ export const DELETE_INGREDIENT = '[Shopping list] DELETE_INGREDIENT';
 export const START_EDIT = '[Shopping list] START_EDIT';
 export const STOP_EDIT = '[Shopping list] STOP_EDIT';
 
+export const STORE_INGREDIENTS = '[Shopping List] Store Ingredients';
+export const FETCH_INGREDIENTS = '[Shopping List] Fetch Ingredients';
+
+export const SET_INGREDIENTS = '[Shopping list] Set Ingredients';
+
 export class AddIngredient implements Action {
   readonly type = ADD_INGREDIENT;
 
@@ -37,9 +42,26 @@ export class StopEdit implements Action {
   readonly type = STOP_EDIT;
 }
 
+export class StoreIngredients implements Action{
+  readonly type = STORE_INGREDIENTS;
+}
+
+export class FetchIngredients implements Action {
+  readonly type = FETCH_INGREDIENTS;
+}
+
+export class SetIngredients implements Action{
+  readonly type = SET_INGREDIENTS;
+  constructor(public  payload: Ingredient[]) {
+  }
+}
+
 export type shoppingType =
     AddIngredient
   | UpdateIngredient
   | DeleteIngredient
   | StartEdit
-  | StopEdit;
+  | StopEdit
+  | StoreIngredients
+  | FetchIngredients
+  | SetIngredients;
